@@ -38,7 +38,9 @@ class YouTuBeViewController: UIViewController, UITableViewDataSource ,UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("YouTuBeCell", forIndexPath: indexPath) as! YouTuBeCell
         let youtube = tableData[indexPath.row]
+        cell.loadImageWidthString(youtube.thumbnail!)
         cell.titleLabel.text = youtube.title
+        cell.descriptionLabel.text = youtube.description
         return cell
     }
     
@@ -46,7 +48,7 @@ class YouTuBeViewController: UIViewController, UITableViewDataSource ,UITableVie
     
     func retrieveDataFromYoutube() -> Void {
         let http = HTTPCommunication()
-        let parameters = ["part":"snippet","maxResults":"20","q":"","key":YOUR_API_KEY]
+        let parameters = ["part":"snippet","maxResults":"20","q":"ball","key":YOUR_API_KEY]
         let url = http.makeUrlWidthString("https://www.googleapis.com/youtube/v3/search", parameters: parameters)
 
         http.retrieveURL(url!) { (response: NSData?) -> Void in

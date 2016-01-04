@@ -32,8 +32,6 @@ class HTTPCommunication: NSObject, NSURLSessionDownloadDelegate {
         }
     }
     
-    //makeTextWritingDirectionLeftToRight
-    
     func makeUrlWidthString(host: String, parameters: [String: String]) -> NSURL? {
         var url: String = host + "?"
         for(pramKey, paramValue) in parameters {
@@ -42,5 +40,13 @@ class HTTPCommunication: NSObject, NSURLSessionDownloadDelegate {
         url = url.substringWithRange(Range<String.Index>(start: url.startIndex, end: url.endIndex.advancedBy(-1)))
         return NSURL(string: url)
     }
+    
+    //    var callback: (NSData?) -> ()
+    
+    //    init(url: String, callback: (NSData?) -> ()) {
+    //        self.url = url
+    //        self.callback = callback
+    //        self.fetch()
+    //    }
     
 }

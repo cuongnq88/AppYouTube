@@ -8,22 +8,49 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" restorationIdentifier="YouTuBeCell" id="iN0-l3-epB" customClass="YouTuBeCell" customModule="AppYouTuBe" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnF-0t-GpX">
-                    <rect key="frame" x="8" y="11" width="108" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnF-0t-GpX">
+                    <rect key="frame" x="92" y="8" width="216" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="glj-y5-jaN">
+                    <rect key="frame" x="8" y="6" width="76" height="76"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="76" id="ak0-O3-Oha"/>
+                        <constraint firstAttribute="height" constant="76" id="r6Z-fP-k2D"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1O9-kw-M44">
+                    <rect key="frame" x="92" y="37" width="216" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="rdQ-hT-uYI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="glj-y5-jaN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="8zR-eG-3my"/>
+                <constraint firstItem="1O9-kw-M44" firstAttribute="top" secondItem="rnF-0t-GpX" secondAttribute="bottom" constant="8" id="Q7P-tH-gcu"/>
+                <constraint firstItem="rnF-0t-GpX" firstAttribute="leading" secondItem="glj-y5-jaN" secondAttribute="trailing" constant="8" id="QvH-aT-vwU"/>
+                <constraint firstAttribute="trailing" secondItem="rnF-0t-GpX" secondAttribute="trailing" constant="12" id="XFk-Tf-uV6"/>
+                <constraint firstAttribute="trailing" secondItem="1O9-kw-M44" secondAttribute="trailing" constant="12" id="he4-Su-6aV"/>
+                <constraint firstItem="rnF-0t-GpX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="kqv-5n-vcf"/>
+                <constraint firstItem="glj-y5-jaN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="nAy-Of-dbw"/>
+                <constraint firstItem="1O9-kw-M44" firstAttribute="leading" secondItem="glj-y5-jaN" secondAttribute="trailing" constant="8" id="rev-2l-DMa"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="descriptionLabel" destination="1O9-kw-M44" id="iIw-so-QNn"/>
+                <outlet property="thumbnail" destination="glj-y5-jaN" id="acV-Zg-aNT"/>
                 <outlet property="titleLabel" destination="rnF-0t-GpX" id="O9z-jJ-Jvg"/>
             </connections>
-            <point key="canvasLocation" x="611" y="161"/>
+            <point key="canvasLocation" x="424" y="38"/>
         </view>
     </objects>
 </document>

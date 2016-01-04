@@ -10,7 +10,12 @@ import UIKit
 
 class YouTuBeCell: UITableViewCell {
 
+    @IBOutlet weak var thumbnail: UIImageView!
+    
     @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +26,19 @@ class YouTuBeCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func loadImageWidthString(url: String) -> Void {
+        
+        if let imageUrl = NSURL(string: url) {
+            let request = NSURLRequest(URL: imageUrl)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+                if error == nil {
+                    self.thumbnail.image = UIImage(data: data!)
+                }
+            })
+            
+        }
     }
 
 }
