@@ -21,6 +21,9 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gcV-ea-CF8">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="C97-OT-aQp"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vsa-ik-sGW">
                                 <rect key="frame" x="0.0" y="108" width="320" height="460"/>
@@ -53,6 +56,7 @@
                     <navigationItem key="navigationItem" title="Videos" id="H6K-Yg-77i"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="searchBar" destination="gcV-ea-CF8" id="FMl-wk-VwV"/>
                         <outlet property="tableView" destination="vsa-ik-sGW" id="Hsl-wS-F35"/>
                     </connections>
                 </viewController>

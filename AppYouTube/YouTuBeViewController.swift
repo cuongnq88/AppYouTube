@@ -8,18 +8,22 @@
 
 import UIKit
 
-class YouTuBeViewController: UIViewController, UITableViewDataSource ,UITableViewDelegate{
+class YouTuBeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate{
     
     let YOUR_API_KEY = "AIzaSyDeg1l2DploCTEIOJmRUO5a7_d9CidzwjM"
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var tableView: UITableView!
     
     private var tableData: [YouTube] = []
     
+    private var isSearch: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerNib(UINib(nibName: "YouTuBeCell", bundle: nil), forCellReuseIdentifier: "YouTuBeCell")
-        self.retrieveDataFromYoutube()
+        self.retrieveDataFromYoutube("")
         
     }
     
@@ -46,27 +50,48 @@ class YouTuBeViewController: UIViewController, UITableViewDataSource ,UITableVie
     
     // MARK: - Get data from yotube
     
-    func retrieveDataFromYoutube() -> Void {
+    func retrieveDataFromYoutube(query: String) -> Void {
+        self.isSearch = false
         let http = HTTPCommunication()
-        let parameters = ["part":"snippet","maxResults":"20","q":"ball","key":YOUR_API_KEY]
+        let parameters = ["part":"snippet","maxResults":"20","q":query,"key":YOUR_API_KEY]
         let url = http.makeUrlWidthString("https://www.googleapis.com/youtube/v3/search", parameters: parameters)
-
+        
         http.retrieveURL(url!) { (response: NSData?) -> Void in
             if let data = response {
                 do {
                     let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
                     if let youtubeList = Parser.parserYoutubeFromJson(json){
+                        self.tableData.removeAll()
                         self.tableData.appendContentsOf(youtubeList)
                         self.tableView.reloadData()
                     }
                 } catch {
                     print("Error parser data")
                 }
-
+                
+            }
+        }
+    }
+    
+    // MARK: - SearchBar
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        print("text = \(searchBar.text)")
+        if isSearch {
+            if let query = searchBar.text {
+                retrieveDataFromYoutube(query)
             }
         }
     }
 
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        print("searchText = \(searchText)")
+        isSearch = true
+        if searchText.isEmpty {
+            retrieveDataFromYoutube("")
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
