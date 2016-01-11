@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		445622E9B0482C75EFBC2866 /* Pods_AppYouTuBe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDD5671720B8DB89E768542D /* Pods_AppYouTuBe.framework */; };
 		58031C5F1C2FEAE0008FB991 /* YouTube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58031C5E1C2FEAE0008FB991 /* YouTube.swift */; };
 		58031C611C2FEDF6008FB991 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58031C601C2FEDF6008FB991 /* Parser.swift */; };
 		58BD341A1C28315800C154F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BD34191C28315800C154F3 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 		58BD342F1C284AE700C154F3 /* YouTuBeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BD342E1C284AE700C154F3 /* YouTuBeCell.swift */; };
 		58BD34331C284B0300C154F3 /* YouTuBeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58BD34321C284B0300C154F3 /* YouTuBeCell.xib */; };
 		58BD34381C28534100C154F3 /* HTTPCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BD34371C28534100C154F3 /* HTTPCommunication.swift */; };
+		58F442841C429A700092C720 /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F442831C429A700092C720 /* PlayVideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		58BD342E1C284AE700C154F3 /* YouTuBeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTuBeCell.swift; sourceTree = "<group>"; };
 		58BD34321C284B0300C154F3 /* YouTuBeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YouTuBeCell.xib; sourceTree = "<group>"; };
 		58BD34371C28534100C154F3 /* HTTPCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPCommunication.swift; sourceTree = "<group>"; };
+		58F442831C429A700092C720 /* PlayVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayVideoViewController.swift; path = AppYouTube/PlayVideoViewController.swift; sourceTree = SOURCE_ROOT; };
+		5FEB3B19509D319495EDCC7A /* Pods-AppYouTuBe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppYouTuBe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppYouTuBe/Pods-AppYouTuBe.debug.xcconfig"; sourceTree = "<group>"; };
+		93116B3D99A20741F436A7E8 /* Pods-AppYouTuBe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppYouTuBe.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppYouTuBe/Pods-AppYouTuBe.release.xcconfig"; sourceTree = "<group>"; };
+		EDD5671720B8DB89E768542D /* Pods_AppYouTuBe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppYouTuBe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				445622E9B0482C75EFBC2866 /* Pods_AppYouTuBe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +66,8 @@
 			children = (
 				58BD34181C28315800C154F3 /* AppYouTuBe */,
 				58BD34171C28315800C154F3 /* Products */,
+				E7B69553FFEFA90BE320B350 /* Pods */,
+				F7D15DBDC08CB3689C0BCA64 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,10 +86,11 @@
 				58BD34341C2850A600C154F3 /* Service */,
 				58BD342D1C284AC400C154F3 /* YouTuBeCell */,
 				58BD34191C28315800C154F3 /* AppDelegate.swift */,
+				58F442831C429A700092C720 /* PlayVideoViewController.swift */,
 				58BD342B1C2831CE00C154F3 /* YouTuBeViewController.swift */,
 				58BD341D1C28315800C154F3 /* Main.storyboard */,
-				58BD34201C28315800C154F3 /* Assets.xcassets */,
 				58BD34221C28315800C154F3 /* LaunchScreen.storyboard */,
+				58BD34201C28315800C154F3 /* Assets.xcassets */,
 				58BD34251C28315800C154F3 /* Info.plist */,
 			);
 			path = AppYouTuBe;
@@ -103,6 +113,23 @@
 			name = Service;
 			sourceTree = "<group>";
 		};
+		E7B69553FFEFA90BE320B350 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5FEB3B19509D319495EDCC7A /* Pods-AppYouTuBe.debug.xcconfig */,
+				93116B3D99A20741F436A7E8 /* Pods-AppYouTuBe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F7D15DBDC08CB3689C0BCA64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDD5671720B8DB89E768542D /* Pods_AppYouTuBe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,9 +137,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58BD34281C28315800C154F3 /* Build configuration list for PBXNativeTarget "AppYouTuBe" */;
 			buildPhases = (
+				C95E3B6809E7223F9BBD5402 /* Check Pods Manifest.lock */,
 				58BD34121C28315800C154F3 /* Sources */,
 				58BD34131C28315800C154F3 /* Frameworks */,
 				58BD34141C28315800C154F3 /* Resources */,
+				62005E7C0D9A7DF6BEB06195 /* Embed Pods Frameworks */,
+				B890ECFE697551757B54C45B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -171,6 +201,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		62005E7C0D9A7DF6BEB06195 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppYouTuBe/Pods-AppYouTuBe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B890ECFE697551757B54C45B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppYouTuBe/Pods-AppYouTuBe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C95E3B6809E7223F9BBD5402 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		58BD34121C28315800C154F3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -181,6 +259,7 @@
 				58031C611C2FEDF6008FB991 /* Parser.swift in Sources */,
 				58BD342C1C2831CE00C154F3 /* YouTuBeViewController.swift in Sources */,
 				58BD342F1C284AE700C154F3 /* YouTuBeCell.swift in Sources */,
+				58F442841C429A700092C720 /* PlayVideoViewController.swift in Sources */,
 				58BD341A1C28315800C154F3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +369,7 @@
 		};
 		58BD34291C28315800C154F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FEB3B19509D319495EDCC7A /* Pods-AppYouTuBe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AppYouTuBe/Info.plist;
@@ -301,6 +381,7 @@
 		};
 		58BD342A1C28315800C154F3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93116B3D99A20741F436A7E8 /* Pods-AppYouTuBe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AppYouTuBe/Info.plist;

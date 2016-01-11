@@ -1,0 +1,6 @@
+framework module Pods_AppYouTuBe {
+  umbrella header "Pods-AppYouTuBe-umbrella.h"
+
+  export *
+  module * { export * }
+}

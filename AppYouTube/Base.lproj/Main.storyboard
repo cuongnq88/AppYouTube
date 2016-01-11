@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lbw-QD-v83">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Lbw-QD-v83">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Videos-->
@@ -38,31 +37,59 @@
                         <constraints>
                             <constraint firstItem="gcV-ea-CF8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2Vk-Cf-8Za"/>
                             <constraint firstItem="vsa-ik-sGW" firstAttribute="top" secondItem="gcV-ea-CF8" secondAttribute="bottom" id="8c6-8v-Oub"/>
-                            <constraint firstAttribute="trailing" secondItem="gcV-ea-CF8" secondAttribute="trailing" id="Bg8-7n-Guy"/>
                             <constraint firstAttribute="trailing" secondItem="gcV-ea-CF8" secondAttribute="trailing" id="ah0-52-oYF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gcV-ea-CF8" secondAttribute="trailing" id="fvv-QN-RGa"/>
                             <constraint firstAttribute="trailing" secondItem="vsa-ik-sGW" secondAttribute="trailing" id="kgN-tM-Esr"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vsa-ik-sGW" secondAttribute="bottom" id="n8Q-7b-kiO"/>
                             <constraint firstItem="gcV-ea-CF8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="pEo-Tz-Zv4"/>
                             <constraint firstItem="vsa-ik-sGW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ub5-EH-t0o"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Bg8-7n-Guy"/>
-                                <exclude reference="fvv-QN-RGa"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Videos" id="H6K-Yg-77i"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="searchBar" destination="gcV-ea-CF8" id="FMl-wk-VwV"/>
                         <outlet property="tableView" destination="vsa-ik-sGW" id="Hsl-wS-F35"/>
+                        <segue destination="c6C-UM-TJl" kind="push" identifier="PlayYoutube" id="ukp-OP-RHd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="257"/>
+            <point key="canvasLocation" x="378.66666666666669" y="243.29333333333332"/>
+        </scene>
+        <!--Player-->
+        <scene sceneID="rMu-Rn-vBe">
+            <objects>
+                <viewController id="c6C-UM-TJl" customClass="PlayVideoViewController" customModule="AppYouTuBe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yK1-T7-hGh"/>
+                        <viewControllerLayoutGuide type="bottom" id="y0o-pd-kfp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="55y-JZ-92Y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plL-x4-sUp" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="plL-x4-sUp" firstAttribute="leading" secondItem="55y-JZ-92Y" secondAttribute="leading" id="I0t-Yb-48k"/>
+                            <constraint firstAttribute="trailing" secondItem="plL-x4-sUp" secondAttribute="trailing" id="RHD-jd-QoU"/>
+                            <constraint firstItem="plL-x4-sUp" firstAttribute="top" secondItem="55y-JZ-92Y" secondAttribute="top" id="Wrp-6q-BzH"/>
+                            <constraint firstItem="y0o-pd-kfp" firstAttribute="top" secondItem="plL-x4-sUp" secondAttribute="bottom" id="muw-Ng-6Lu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Player" id="v8s-yb-aok"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="playerView" destination="plL-x4-sUp" id="Gzr-qZ-4va"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OtD-sF-2AI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="814" y="243"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KHs-B1-5YR">
@@ -81,7 +108,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y99-J6-C5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277" y="257"/>
+            <point key="canvasLocation" x="-68" y="243"/>
         </scene>
     </scenes>
 </document>

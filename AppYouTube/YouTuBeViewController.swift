@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class YouTuBeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate{
     
     let YOUR_API_KEY = "AIzaSyDeg1l2DploCTEIOJmRUO5a7_d9CidzwjM"
+    
+    let YOUR_HOST_YOUTUBE = "https://www.youtube.com/watch?v="
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -46,6 +50,14 @@ class YouTuBeViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.titleLabel.text = youtube.title
         cell.descriptionLabel.text = youtube.description
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let youtube = tableData[indexPath.row]
+//        if let url: NSURL = NSURL(string: YOUR_HOST_YOUTUBE + (youtube.videoId)!) {
+//            UIApplication.sharedApplication().openURL(url)
+//        }
+        self.performSegueWithIdentifier("PlayYoutube", sender: youtube)
     }
     
     // MARK: - Get data from yotube
@@ -92,14 +104,44 @@ class YouTuBeViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        if segue.identifier == "PlayYoutube" {
+            if let destination = segue.destinationViewController as? PlayVideoViewController {
+                if let youtube = sender as? YouTube {
+                    print(youtube)
+                    destination.videoID = youtube.videoId
+                }
+            }
+            
+        }
     }
-    */
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
